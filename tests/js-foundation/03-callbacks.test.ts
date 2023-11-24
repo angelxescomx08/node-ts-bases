@@ -9,4 +9,14 @@ describe("03-callbacks Test", () => {
       done();
     });
   });
+
+  test("getUserById Should return the correct user", (done) => {
+    const id = 1;
+    getUserById(id, (err, user) => {
+      expect(err).toBeUndefined();
+      expect(user?.id).toBe(id);
+      expect(user?.name).toBe("John Doe");
+      done();
+    });
+  });
 });
